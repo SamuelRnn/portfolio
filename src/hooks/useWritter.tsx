@@ -26,7 +26,7 @@ export const useWritter = () => {
 			} else {
 				setTimeout(() => {
 					setRenderedText(renderedText.slice(0, renderedText.length - 1))
-				}, 24)
+				}, 30)
 			}
 		}
 		if (action === actions.write) {

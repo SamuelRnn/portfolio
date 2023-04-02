@@ -1,30 +1,16 @@
 import Image from 'next/image'
 import profile from '../../public/profile.jpeg'
-import { useEffect } from 'react'
-import { useWritter } from '@/hooks'
+import useSubtitle from '@/hooks/useSubtitle'
 
 export default function Header() {
-	const { render, output } = useWritter()
-
-	useEffect(() => {
-		render('sam perez')
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-	useEffect(() => {
-		if (output === 'sam perez') {
-			setTimeout(() => {
-				render('full stack developer')
-			}, 1500)
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [output])
+	const { output } = useSubtitle()
 
 	return (
 		<header
 			className="h-screen bg-left-center bg-cover bg-fixed relative overflow-hidden"
 			style={{ backgroundImage: 'url(/code.png)' }}
 		>
-			<div className="w-full h-full bg-gradient-to-t from-main-dark to-black/30 flex items-center backdrop-blur-[1px]">
+			<div className="w-full h-full bg-gradient-to-t from-main-dark to-black/30 flex items-center backdrop-blur-sm">
 				<div className="px-auto w-full flex flex-wrap justify-center items-center gap-x-10 -mt-16">
 					<Image
 						width={224}
