@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Titles";
+  src: url("milker.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Accent";
+  src: url("Rhizome.otf") format("opentype");
+}
