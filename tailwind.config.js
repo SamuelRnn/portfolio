@@ -9,7 +9,13 @@ module.exports = {
 			},
 			colors: {
 				accent: 'rgb(171 64 96)',
-				'main-dark': 'rgb(17 17 17)',
+				main: {
+					dark: 'rgb(17 17 17)',
+					700: 'rgb(35, 30, 32)',
+				},
+			},
+			width: {
+				box: 'min(1024px, 100%)',
 			},
 		},
 	},
