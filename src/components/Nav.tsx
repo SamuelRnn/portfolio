@@ -23,6 +23,24 @@ export default function Nav() {
 			behavior: 'smooth',
 		})
 	}
+	const sections = [
+		{
+			title: 'start',
+			icon: <AiFillHome className="text-2xl m-2" />,
+		},
+		{
+			title: 'about',
+			icon: <HiUser className="text-2xl m-2" />,
+		},
+		{
+			title: 'technologies',
+			icon: <HiCode className="text-2xl m-2" />,
+		},
+		{
+			title: 'projects',
+			icon: <HiSquares2X2 className="text-2xl m-2" />,
+		},
+	]
 
 	return (
 		<div className="fixed top-5 z-50 w-full flex justify-center">
@@ -36,140 +54,34 @@ export default function Nav() {
 					} transition-all duration-300 ease-out`}
 				>
 					<nav className="w-full flex justify-evenly items-center">
-						{/* Start */}
-						<motion.button
-							onHoverStart={() => setHovered('start')}
-							onHoverEnd={() => setHovered(null)}
-							onClick={() => navigate('start')}
-							className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-						>
-							<AiFillHome className="text-2xl m-2" />
-							<AnimatePresence>
-								{hovered === 'start' && (
-									<motion.p
-										variants={{
-											hovered: { opacity: 1 },
-											out: { opacity: 0 },
-										}}
-										initial="out"
-										animate="hovered"
-										exit="out"
-										className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-									>
-										Start
-									</motion.p>
-								)}
-							</AnimatePresence>
-						</motion.button>
-						{/* Start */}
-
-						{/* About */}
-						<motion.button
-							onHoverStart={() => setHovered('about')}
-							onHoverEnd={() => setHovered(null)}
-							onClick={() => navigate('about')}
-							className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-						>
-							<HiUser className="text-2xl m-2" />
-							<AnimatePresence>
-								{hovered === 'about' && (
-									<motion.p
-										variants={{
-											hovered: { opacity: 1 },
-											out: { opacity: 0 },
-										}}
-										initial="out"
-										animate="hovered"
-										exit="out"
-										className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-									>
-										About
-									</motion.p>
-								)}
-							</AnimatePresence>
-						</motion.button>
-						{/* About */}
-
-						{/* Technologies */}
-						<motion.button
-							onHoverStart={() => setHovered('technologies')}
-							onHoverEnd={() => setHovered(null)}
-							onClick={() => navigate('technologies')}
-							className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-						>
-							<HiCode className="text-2xl m-2" />
-							<AnimatePresence>
-								{hovered === 'technologies' && (
-									<motion.p
-										variants={{
-											hovered: { opacity: 1 },
-											out: { opacity: 0 },
-										}}
-										initial="out"
-										animate="hovered"
-										exit="out"
-										className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-									>
-										Technologies
-									</motion.p>
-								)}
-							</AnimatePresence>
-						</motion.button>
-						{/* Technologies */}
-
-						{/* Projects */}
-						<motion.button
-							onHoverStart={() => setHovered('projects')}
-							onHoverEnd={() => setHovered(null)}
-							onClick={() => navigate('projects')}
-							className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-						>
-							<HiSquares2X2 className="text-2xl m-2" />
-							<AnimatePresence>
-								{hovered === 'projects' && (
-									<motion.p
-										variants={{
-											hovered: { opacity: 1 },
-											out: { opacity: 0 },
-										}}
-										initial="out"
-										animate="hovered"
-										exit="out"
-										className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-									>
-										Projects
-									</motion.p>
-								)}
-							</AnimatePresence>
-						</motion.button>
-						{/* Projects */}
-
-						{/* Projects */}
-						<motion.button
-							onHoverStart={() => setHovered('projects')}
-							onHoverEnd={() => setHovered(null)}
-							onClick={() => navigate('projects')}
-							className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-						>
-							<HiSquares2X2 className="text-2xl m-2" />
-							<AnimatePresence>
-								{hovered === 'projects' && (
-									<motion.p
-										variants={{
-											hovered: { opacity: 1 },
-											out: { opacity: 0 },
-										}}
-										initial="out"
-										animate="hovered"
-										exit="out"
-										className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-									>
-										Projects
-									</motion.p>
-								)}
-							</AnimatePresence>
-						</motion.button>
-						{/* Projects */}
+						{sections.map(section => (
+							<motion.button
+								key={section.title}
+								onHoverStart={() => setHovered(section.title)}
+								onHoverEnd={() => setHovered(null)}
+								onClick={() => navigate(section.title)}
+								whileTap={{ scale: 0.85 }}
+								className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
+							>
+								{section.icon}
+								<AnimatePresence>
+									{hovered === section.title && (
+										<motion.p
+											variants={{
+												hovered: { opacity: 1 },
+												out: { opacity: 0 },
+											}}
+											initial="out"
+											animate="hovered"
+											exit="out"
+											className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
+										>
+											{section.title}
+										</motion.p>
+									)}
+								</AnimatePresence>
+							</motion.button>
+						))}
 					</nav>
 				</div>
 				{/* nav ui */}
