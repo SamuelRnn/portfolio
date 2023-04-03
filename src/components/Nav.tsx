@@ -5,10 +5,19 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Nav() {
+	const [isDesktop, setIsDesktop] = useState(false)
 	const [navState, setNavState] = useState('top')
 	const [hovered, setHovered] = useState<null | string>(null)
 
 	useEffect(() => {
+		const toggleNav = () => {
+			if (window.innerWidth >= 1024) setIsDesktop(true)
+			else setIsDesktop(false)
+		}
+
+		toggleNav()
+		window.addEventListener('resize', toggleNav)
+
 		const scroller = () => {
 			if (scrollY > 0) setNavState('out')
 			else setNavState('top')
@@ -41,51 +50,61 @@ export default function Nav() {
 			icon: <HiSquares2X2 className="text-2xl m-2" />,
 		},
 	]
-
-	return (
-		<div className="fixed top-5 z-50 w-full flex justify-center">
-			<div className="w-box mx-4">
-				{/* nav ui */}
-				<div
-					className={`w-full max-w-md mx-auto h-[70px] rounded-2xl flex ${
-						navState === 'out'
-							? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
-							: ' border-transparent  -translate-y-5'
-					} transition-all duration-300 ease-out`}
-				>
-					<nav className="w-full flex justify-evenly items-center">
-						{sections.map(section => (
-							<motion.button
-								key={section.title}
-								onHoverStart={() => setHovered(section.title)}
-								onHoverEnd={() => setHovered(null)}
-								onClick={() => navigate(section.title)}
-								whileTap={{ scale: 0.85 }}
-								className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
-							>
-								{section.icon}
-								<AnimatePresence>
-									{hovered === section.title && (
-										<motion.p
-											variants={{
-												hovered: { opacity: 1 },
-												out: { opacity: 0 },
-											}}
-											initial="out"
-											animate="hovered"
-											exit="out"
-											className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-										>
-											{section.title}
-										</motion.p>
-									)}
-								</AnimatePresence>
-							</motion.button>
-						))}
-					</nav>
+	if (isDesktop)
+		return (
+			<motion.div
+				initial={{ y: -70 }}
+				animate={{ y: 0 }}
+				transition={{
+					type: 'spring',
+					stiffness: 60,
+					bounce: false,
+				}}
+				className="fixed top-5 z-50 w-full flex justify-center"
+			>
+				<div className="w-box mx-4">
+					{/* nav ui */}
+					<div
+						className={`w-full max-w-md mx-auto h-[70px] rounded-2xl flex ${
+							navState === 'out'
+								? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
+								: ' border-transparent  -translate-y-5'
+						} transition-all duration-300 ease-out`}
+					>
+						<nav className="w-full flex justify-evenly items-center">
+							{sections.map(section => (
+								<motion.button
+									key={section.title}
+									onHoverStart={() => setHovered(section.title)}
+									onHoverEnd={() => setHovered(null)}
+									onClick={() => navigate(section.title)}
+									whileTap={{ scale: 0.85 }}
+									className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
+								>
+									{section.icon}
+									<AnimatePresence>
+										{hovered === section.title && (
+											<motion.p
+												variants={{
+													hovered: { opacity: 1 },
+													out: { opacity: 0 },
+												}}
+												initial="out"
+												animate="hovered"
+												exit="out"
+												className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
+											>
+												{section.title}
+											</motion.p>
+										)}
+									</AnimatePresence>
+								</motion.button>
+							))}
+						</nav>
+					</div>
+					{/* nav ui */}
 				</div>
-				{/* nav ui */}
-			</div>
-		</div>
-	)
+			</motion.div>
+		)
+	return <></>
 }

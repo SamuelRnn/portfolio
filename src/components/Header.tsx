@@ -42,9 +42,9 @@ export default function Header() {
 						<h1 className="font-titles text-4xl md:text-5xl drop-shadow-md shadow-white">
 							samuel rnn
 						</h1>
-						<h2 className="thin-text text-lg">
+						<h2 className="thin-text">
 							{output}
-							<span className="animate-ping font-black">_</span>
+							<span className="animate-ping font-black">I</span>
 						</h2>
 					</div>
 				</div>
