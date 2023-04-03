@@ -1,7 +1,13 @@
 import Head from 'next/head'
-import { Header, Layout, About } from '@/components'
+import { Header, Layout, About, Technologies } from '@/components'
+import { useEffect } from 'react'
 
 export default function Home() {
+	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+		})
+	})
 	return (
 		<>
 			<Head>
@@ -17,12 +23,7 @@ export default function Home() {
 			{/* <main className="bg-main-dark text-zinc-200"> */}
 			<main>
 				<About />
-				<p className="mt-12 h-screen">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto at
-					quia dolorum. Quibusdam debitis, quasi natus sequi voluptatem laborum
-					rerum incidunt, iusto vitae laudantium in itaque molestias id corporis
-					velit.
-				</p>
+				<Technologies />
 			</main>
 		</>
 	)

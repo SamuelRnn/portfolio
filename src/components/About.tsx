@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import dog from '../../public/shiba.png'
 import Title from './Title'
-// import dog from '../../public/dog-placeholder.png'
 
 export default function About() {
 	return (
 		<div className="bg-neutral-200 h-full rounded-t-[1.8rem] lg:rounded-b-lg mx-auto w-box px-4 pt-8 text-main-dark relative overflow-hidden">
-			<div className="grid grid-about max-md:grid-cols-1 mt-6 pb-[330px] md:pb-28">
+			<div className="pb-24" id="about"></div>
+			<div className="grid grid-about max-md:grid-cols-1 mt-6 pb-[380px] md:pb-28">
 				{/* content */}
-				<div className="bg-accent/[.08] rounded-lg z-10 backdrop-blur-sm">
-					<Title content="who am i" shadow="whoami" />
+				<div className="bg-accent/[.08] rounded-lg z-10">
+					<Title content="who am i" shadow="about" />
 					<p className="my-auto px-2">
 						Hello!👋 And welcome to my portfolio, my name is Samyr Perez, but
 						you can call me{' '}
@@ -39,7 +39,7 @@ export default function About() {
 				placeholder="blur"
 				width={400}
 				height={480}
-				className="absolute object-cover object-bottom max-w-xs -right-1 -bottom-1 -z-[0] pl-10"
+				className="absolute object-cover object-bottom max-w-[270px] -right-1 -bottom-1 -z-0"
 				alt="dog"
 			/>
 		</div>
