@@ -64,10 +64,10 @@ export default function Nav() {
 			>
 				{/* nav ui */}
 				<div
-					className={`w-full max-w-md mx-auto h-[70px] rounded-2xl flex ${
+					className={`w-full max-w-md mx-auto h-16 rounded-2xl flex ${
 						navState === 'out'
 							? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
-							: ' border-transparent  -translate-y-5'
+							: ' border-transparent  -translate-y-3'
 					} transition-all duration-300 ease-out`}
 				>
 					<nav className="w-full flex justify-evenly items-center text-zinc-300">

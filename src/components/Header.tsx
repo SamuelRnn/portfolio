@@ -39,12 +39,12 @@ export default function Header() {
 					src={code}
 					alt="code_hero"
 					priority
-					className={`object-cover object-left left-0 h-screen`}
+					className="object-cover object-left left-0 h-screen"
 				/>
 			</motion.div>
 
 			<div className="absolute top-0 flex items-center w-full h-full bg-gradient-to-b from-main-dark/50 via-main-dark/70 to-main-dark">
-				<div className="mx-auto flex flex-wrap items-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
+				<div className="mx-auto flex flex-wrap items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
 					<Image
 						width={224}
 						height={224}

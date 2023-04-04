@@ -20,7 +20,6 @@ export default function Home() {
 			</Head>
 			<Layout />
 			<Header />
-			{/* <main className="bg-main-dark text-zinc-200"> */}
 			<main>
 				<About />
 				<Technologies />
