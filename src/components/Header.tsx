@@ -30,20 +30,23 @@ const social_tags = [
 export default function Header() {
 	const { output } = useSubtitle()
 	const { scrollY } = useScroll()
-	const y = useTransform(scrollY, [0, 500], ['0%', '45%'])
+	const y = useTransform(scrollY, [0, 600], ['0%', '50%'])
 
 	return (
-		<header className="h-screen overflow-hidden" id="start">
-			<motion.div className="relative h-full" style={{ y }}>
+		<header className="h-screen overflow-hidden relative" id="start">
+			<motion.div
+				className="left-0 h-screen -top-16 -z-50 absolute"
+				style={{ y }}
+			>
 				<Image
 					src={code}
 					alt="code_hero"
 					priority
-					className="object-cover object-left left-0 h-screen"
+					className="object-cover object-left"
 				/>
 			</motion.div>
 
-			<div className="absolute top-0 flex items-center w-full h-full bg-gradient-to-b from-main-dark/50 via-main-dark/70 to-main-dark">
+			<div className="absolute top-0 flex items-center w-full h-full bg-gradient-to-b from-main-dark/40 via-main-dark/80 to-main-dark">
 				<div className="mx-auto flex flex-wrap items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
 					<Image
 						width={224}

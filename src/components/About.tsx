@@ -1,21 +1,31 @@
 import Image from 'next/image'
 import vergil from '../../public/vergil.png'
-// import bg from '../../public/bg.jpg'
+import bg from '../../public/bg.jpg'
 import Title from './Title'
+import { motion, useTransform, useScroll } from 'framer-motion'
 
 export default function About() {
+	const { scrollY } = useScroll()
+	const y = useTransform(scrollY, [0, 1000], ['0%', '-40%'])
+	const scale = useTransform(scrollY, [0, 2000], [1.6, 0.6])
+
 	return (
 		<>
 			<div id="about" className="pb-12" />
 			<div className="h-full lg:rounded-b-lg mx-auto w-box relative overflow-hidden">
 				<div
-					className="h-60 grid place-content-center bg-fixed bg-cover bg-center rounded-t-[1.8rem]"
+					className="h-72 grid place-content-center"
 					style={{
-						backgroundImage: 'url(/bg.jpg)',
 						clipPath: 'inset(0 0 0 0 round 36px 36px 0% 0%)',
 					}}
 				>
 					<Title content="about" />
+					<motion.div
+						className="fixed -z-10 top-0 w-full h-screen origin-center left-0"
+						style={{ y, scale }}
+					>
+						<Image src={bg} alt="image" className="object-cover" />
+					</motion.div>
 				</div>
 				<div className="bg-neutral-200 px-4 py-14">
 					{/* grid */}

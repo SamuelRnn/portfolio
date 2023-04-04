@@ -60,7 +60,7 @@ export default function Nav() {
 					stiffness: 60,
 					bounce: false,
 				}}
-				className="fixed top-5 z-50 w-full flex justify-center"
+				className="fixed top-5 z-50 w-full flex justify-center font-accent"
 			>
 				{/* nav ui */}
 				<div
