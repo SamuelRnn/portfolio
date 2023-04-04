@@ -6,7 +6,7 @@ import { motion, useTransform, useScroll } from 'framer-motion'
 
 export default function About() {
 	const { scrollY } = useScroll()
-	const y = useTransform(scrollY, [0, 1000], ['0%', '-40%'])
+	const y = useTransform(scrollY, [0, 1000], ['0%', '-60%'])
 	const scale = useTransform(scrollY, [0, 2000], [1.6, 0.6])
 
 	return (
@@ -21,10 +21,14 @@ export default function About() {
 				>
 					<Title content="about" />
 					<motion.div
-						className="fixed -z-10 top-0 w-full h-screen origin-center left-0"
+						className="fixed -z-10 top-0 bottom-0 w-full h-screen origin-center left-0"
 						style={{ y, scale }}
 					>
-						<Image src={bg} alt="image" className="object-cover" />
+						<Image
+							src={bg}
+							alt="image"
+							className="w-full absolute object-center object-cover bottom-0 h-screen"
+						/>
 					</motion.div>
 				</div>
 				<div className="bg-neutral-200 px-4 py-14">

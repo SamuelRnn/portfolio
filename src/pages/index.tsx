@@ -20,7 +20,7 @@ export default function Home() {
 			</Head>
 			<Layout />
 			<Header />
-			<main>
+			<main className="bg-main-dark">
 				<About />
 				<Technologies />
 			</main>

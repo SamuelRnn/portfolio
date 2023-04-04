@@ -27,27 +27,28 @@ const social_tags = [
 		icon: <BsWhatsapp className="text-2xl text-emerald-400" />,
 	},
 ]
+
 export default function Header() {
 	const { output } = useSubtitle()
 	const { scrollY } = useScroll()
-	const y = useTransform(scrollY, [0, 600], ['0%', '50%'])
+	const y = useTransform(scrollY, [0, 600], ['0%', '-30%'])
 
 	return (
-		<header className="h-screen overflow-hidden relative" id="start">
+		<header className="h-screen relative" id="start">
 			<motion.div
-				className="left-0 h-screen -top-16 -z-50 absolute"
-				style={{ y }}
+				className="fixed -z-10 top-0 w-full full origin-center left-0 overflow-hidden"
+				// style={{ y }}
 			>
 				<Image
 					src={code}
 					alt="code_hero"
 					priority
-					className="object-cover object-left"
+					className="object-cover object-left h-screen blur-[2px]"
 				/>
 			</motion.div>
 
-			<div className="absolute top-0 flex items-center w-full h-full bg-gradient-to-b from-main-dark/40 via-main-dark/80 to-main-dark">
-				<div className="mx-auto flex flex-wrap items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
+			<div className="absolute top-0 flex items-center w-full h-full bg-gradient-to-b from-main-dark/10 via-main-dark/80 to-main-dark">
+				<div className="mx-auto flex flex-col items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
 					<Image
 						width={224}
 						height={224}
