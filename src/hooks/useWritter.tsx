@@ -26,7 +26,7 @@ export const useWritter = () => {
 			} else {
 				setTimeout(() => {
 					setRenderedText(renderedText.slice(0, renderedText.length - 1))
-				}, 30)
+				}, 40)
 			}
 		}
 		if (action === actions.write) {
@@ -39,7 +39,7 @@ export const useWritter = () => {
 				setTimeout(() => {
 					setRenderedText(input.slice(0, index))
 					setIndex(index + 1)
-				}, 50)
+				}, 55)
 			}
 		}
 	}, [action, renderedText, index, input])

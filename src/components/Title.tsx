@@ -5,13 +5,9 @@ interface Title {
 
 export default function Title({ content, shadow }: Title) {
 	return (
-		<div className="mb-4 relative h-[90px]">
-			<span className="absolute bottom-0 font-titles text-accent/30 leading-[60px] translate-x-4 text-[50px]">
-				{shadow}
-			</span>
-			<h2 className="font-titles text-4xl absolute bottom-0 text-zinc-800">
-				{content}
-			</h2>
-		</div>
+		<h2 className="mb-6 flex items-center font-titles text-accent/30 text-2xl md:text-4xl">
+			{`<${shadow}/>`}
+			<span className="font-titles text-zinc-800 ml-3">{content}</span>
+		</h2>
 	)
 }

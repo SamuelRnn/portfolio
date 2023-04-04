@@ -42,7 +42,7 @@ export default function Nav() {
 			icon: <HiUser className="text-2xl m-2" />,
 		},
 		{
-			title: 'technologies',
+			title: 'stack',
 			icon: <HiCode className="text-2xl m-2" />,
 		},
 		{
@@ -62,48 +62,48 @@ export default function Nav() {
 				}}
 				className="fixed top-5 z-50 w-full flex justify-center"
 			>
-				<div className="w-box mx-4">
-					{/* nav ui */}
-					<div
-						className={`w-full max-w-md mx-auto h-[70px] rounded-2xl flex ${
-							navState === 'out'
-								? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
-								: ' border-transparent  -translate-y-5'
-						} transition-all duration-300 ease-out`}
-					>
-						<nav className="w-full flex justify-evenly items-center">
-							{sections.map(section => (
+				{/* nav ui */}
+				<div
+					className={`w-full max-w-md mx-auto h-[70px] rounded-2xl flex ${
+						navState === 'out'
+							? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
+							: ' border-transparent  -translate-y-5'
+					} transition-all duration-300 ease-out`}
+				>
+					<nav className="w-full flex justify-evenly items-center text-zinc-300">
+						{sections.map(section => (
+							<div key={section.title} className="relative flex justify-center">
 								<motion.button
-									key={section.title}
 									onHoverStart={() => setHovered(section.title)}
 									onHoverEnd={() => setHovered(null)}
-									onClick={() => navigate(section.title)}
+									// onClick={}
+									onTap={() => navigate(section.title)}
 									whileTap={{ scale: 0.85 }}
-									className="flex items-center justify-center font-accent relative hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
+									className="flex items-center justify-center font-accent hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
 								>
 									{section.icon}
-									<AnimatePresence>
-										{hovered === section.title && (
-											<motion.p
-												variants={{
-													hovered: { opacity: 1 },
-													out: { opacity: 0 },
-												}}
-												initial="out"
-												animate="hovered"
-												exit="out"
-												className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
-											>
-												{section.title}
-											</motion.p>
-										)}
-									</AnimatePresence>
 								</motion.button>
-							))}
-						</nav>
-					</div>
-					{/* nav ui */}
+								<AnimatePresence>
+									{hovered === section.title && (
+										<motion.p
+											variants={{
+												hovered: { opacity: 1 },
+												out: { opacity: 0 },
+											}}
+											initial="out"
+											animate="hovered"
+											exit="out"
+											className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
+										>
+											{section.title}
+										</motion.p>
+									)}
+								</AnimatePresence>
+							</div>
+						))}
+					</nav>
 				</div>
+				{/* nav ui */}
 			</motion.div>
 		)
 	return <></>

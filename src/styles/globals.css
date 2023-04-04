@@ -13,5 +13,5 @@ body {
 	grid-template-columns: auto 320px;
 }
 .thin-text {
-	@apply h-2 font-thin uppercase tracking-[.2rem] text-zinc-400;
+	@apply font-thin uppercase tracking-[.2rem] text-zinc-400;
 }
