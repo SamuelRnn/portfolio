@@ -1,6 +1,7 @@
 import { AiFillHome } from 'react-icons/ai'
 import { HiCode } from 'react-icons/hi'
 import { HiSquares2X2, HiUser } from 'react-icons/hi2'
+import { BsSendFill } from 'react-icons/bs'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -48,6 +49,10 @@ export default function Nav() {
 		{
 			title: 'projects',
 			icon: <HiSquares2X2 className="text-2xl m-2" />,
+		},
+		{
+			title: 'contact',
+			icon: <BsSendFill className="text-xl m-2" />,
 		},
 	]
 	if (isDesktop)

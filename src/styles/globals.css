@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-main-dark text-zinc-200;
+	@apply bg-main-dark text-zinc-300;
 	scrollbar-width: none !important;
 	scrollbar-color: #999999 #ffffff;
 	scroll-behavior: smooth;

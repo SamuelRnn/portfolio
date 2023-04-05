@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import vergil from '../../public/vergil.png'
 import bg from '../../public/bg.jpg'
+import coder from '../../public/coder.svg'
 import Title from './Title'
 import { motion, useTransform, useScroll } from 'framer-motion'
 
@@ -13,6 +13,7 @@ export default function About() {
 		<>
 			<div id="about" className="pb-12" />
 			<div className="h-full lg:rounded-b-lg mx-auto w-box relative overflow-hidden">
+				{/* parallax */}
 				<div
 					className="h-72 grid place-content-center"
 					style={{
@@ -31,12 +32,14 @@ export default function About() {
 						/>
 					</motion.div>
 				</div>
-				<div className="bg-neutral-200 px-4 py-14">
+				{/* parallax */}
+
+				{/* content */}
+				<div className="bg-main-900 px-4 py-8 relative overflow-hidden text-zinc-400">
 					{/* grid */}
-					<div className="grid grid-about max-md:grid-cols-1 gap-6 max-w-3xl mx-auto place-items-center">
-						{/* content */}
-						<div className="sm:text-lg font-accent text-zinc-700">
-							<h3 className="text-4xl mb-6 font-titles text-main-dark">
+					<div className="grid grid-about max-md:grid-cols-1 gap-6 max-w-[800px] mx-auto place-items-center">
+						<div className="text-lg font-accent">
+							<h3 className="text-4xl mb-6 font-titles text-accent">
 								who am i
 							</h3>
 
@@ -69,17 +72,12 @@ export default function About() {
 							</p>
 							{/* paragraphs */}
 						</div>
-						{/* content */}
-						<Image
-							src={vergil}
-							placeholder="blur"
-							width={400}
-							height={480}
-							className="rounded-xl shadow-md shadow-main-dark"
-							alt="dog"
-						/>
+						<div className="w-[320px] overflow-hidden">
+							<Image src={coder} alt="dev" className="scale-125" />
+						</div>
 					</div>
 				</div>
+				{/* content */}
 			</div>
 		</>
 	)
