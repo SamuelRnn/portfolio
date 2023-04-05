@@ -11,16 +11,14 @@ export default function About() {
 
 	return (
 		<>
-			<div id="about" className="pb-12" />
-			<div className="h-full lg:rounded-b-lg mx-auto w-box relative overflow-hidden">
+			<div className="h-full rounded-b-xl mx-auto w-box relative overflow-hidden -translate-y-20">
 				{/* parallax */}
 				<div
-					className="h-72 grid place-content-center"
+					className="h-60 sm:h-80"
 					style={{
 						clipPath: 'inset(0 0 0 0 round 36px 36px 0% 0%)',
 					}}
 				>
-					<Title content="about" />
 					<motion.div
 						className="fixed -z-10 top-0 bottom-0 w-full h-screen origin-center left-0"
 						style={{ y, scale }}
@@ -31,11 +29,14 @@ export default function About() {
 							className="w-full absolute object-center object-cover bottom-0 h-screen"
 						/>
 					</motion.div>
+					<div className="absolute top-0 left-0 w-full h-60 sm:h-80 bg-main-dark/20 grid place-content-center">
+						<Title content="about" />
+					</div>
 				</div>
 				{/* parallax */}
 
 				{/* content */}
-				<div className="bg-main-900 px-4 py-8 relative overflow-hidden text-zinc-400">
+				<div className="bg-main-mid px-4 py-10 relative overflow-hidden text-zinc-400">
 					{/* grid */}
 					<div className="grid grid-about max-md:grid-cols-1 gap-6 max-w-[800px] mx-auto place-items-center">
 						<div className="text-lg font-accent">
@@ -73,7 +74,11 @@ export default function About() {
 							{/* paragraphs */}
 						</div>
 						<div className="w-[320px] overflow-hidden">
-							<Image src={coder} alt="dev" className="scale-125" />
+							<Image
+								src={coder}
+								alt="dev"
+								className="scale-[1.2] object-center"
+							/>
 						</div>
 					</div>
 				</div>

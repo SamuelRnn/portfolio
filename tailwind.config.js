@@ -11,11 +11,11 @@ module.exports = {
 				accent: 'rgb(171 64 96)',
 				main: {
 					dark: 'rgb(17 17 17)',
-					900: 'rgb(26 26 28) ',
+					mid: 'rgb(26 24 29) ',
 				},
 			},
 			width: {
-				box: 'min(1024px, 100%)',
+				box: 'min(1024px, 95%)',
 			},
 		},
 	},
