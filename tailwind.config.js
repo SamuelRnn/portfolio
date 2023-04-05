@@ -4,8 +4,11 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				titles: 'Titles',
-				accent: 'Accent',
+				// titles: 'Titles',
+				main: '"Work Sans", sans-serif;',
+			},
+			fontWeight: {
+				titles: '900',
 			},
 			colors: {
 				accent: 'rgb(171 64 96)',

@@ -3,7 +3,7 @@ import profile from '../../public/profile.jpeg'
 import code from '../../public/code.png'
 import useSubtitle from '@/hooks/useSubtitle'
 import { useTransform, motion, useScroll } from 'framer-motion'
-import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from 'react-icons/bs'
+import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
 
 const social_tags = [
 	{
@@ -20,11 +20,6 @@ const social_tags = [
 		name: 'linkedin',
 		href: 'https://www.linkedin.com/in/sam-p-quino/',
 		icon: <BsLinkedin className="text-2xl text-sky-400" />,
-	},
-	{
-		name: 'whatsapp',
-		href: 'https://wa.me/51940673811',
-		icon: <BsWhatsapp className="text-2xl text-emerald-400" />,
 	},
 ]
 
@@ -60,15 +55,17 @@ export default function Header() {
 					/>
 
 					<div className="text-center">
-						<h1 className="font-titles text-4xl md:text-5xl">samuel rnn</h1>
+						<h1 className="font-titles text-4xl md:text-5xl uppercase">
+							samuel rnn
+						</h1>
 
-						<div className="thin-text pl-1 md:text-lg">
+						<div className="thin-text pl-1 md:text-lg font-sans">
 							{output}
 							<span className="animate-ping font-extrabold">_</span>
 						</div>
 
 						{/* Social content */}
-						<div className="w-60 mx-auto mt-6">
+						<div className="w-40 mx-auto mt-6">
 							<div className="flex justify-between">
 								{social_tags.map(({ href, icon, name }) => (
 									<a

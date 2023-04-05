@@ -3,6 +3,7 @@ import bg from '../../public/bg.jpg'
 import coder from '../../public/coder.svg'
 import Title from './Title'
 import { motion, useTransform, useScroll } from 'framer-motion'
+import Technologies from './Technologies'
 
 export default function About() {
 	const { scrollY } = useScroll()
@@ -39,13 +40,21 @@ export default function About() {
 				<div className="bg-main-mid px-4 py-10 relative overflow-hidden text-zinc-400">
 					{/* grid */}
 					<div className="grid grid-about max-md:grid-cols-1 gap-6 max-w-[800px] mx-auto place-items-center">
-						<div className="text-lg font-accent">
-							<h3 className="text-4xl mb-6 font-titles text-accent">
+						<motion.div
+							initial={{ x: -100, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							transition={{
+								type: 'spring',
+								bounce: false,
+							}}
+							viewport={{ once: true }}
+						>
+							<h3 className="text-3xl mb-6 font-titles text-accent uppercase">
 								who am i
 							</h3>
 
 							{/* paragraphs */}
-							<p className="my-auto font-accent">
+							<p className="my-auto">
 								Hello!👋 And welcome to my portfolio, my name is Samyr Perez,
 								but you can call me{' '}
 								<span className="bg-accent text-zinc-200 px-1 rounded-md">
@@ -56,15 +65,12 @@ export default function About() {
 							</p>
 							<p className="my-auto py-3">
 								I&apos;m a{' '}
-								<span className="text-accent font-accent">
-									Full-Stack Developer
-								</span>{' '}
+								<span className="text-accent ">Full-Stack Developer</span>{' '}
 								who&apos;s always in the search of knowledge. With my{' '}
-								<span className="text-accent font-accent">high-end</span>{' '}
-								skillset, I aim to deliver the{' '}
-								<span className="text-accent font-accent">best</span> and most{' '}
-								<span className="text-accent font-accent">scalable</span>{' '}
-								results for every project I work on.
+								<span className="text-accent ">high-end</span> skillset, I aim
+								to deliver the <span className="text-accent ">best</span> and
+								most <span className="text-accent ">scalable</span> results for
+								every project I work on.
 							</p>
 							<p className="my-auto pb-3">
 								Whether it&apos;s developing robust back-end solutions or
@@ -72,15 +78,28 @@ export default function About() {
 								challenge!
 							</p>
 							{/* paragraphs */}
-						</div>
-						<div className="w-[320px] overflow-hidden">
+						</motion.div>
+						<motion.div
+							className="w-[320px] overflow-hidden"
+							initial={{ x: 100, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							transition={{
+								type: 'spring',
+								bounce: false,
+							}}
+							viewport={{ once: true }}
+						>
 							<Image
 								src={coder}
 								alt="dev"
 								className="scale-[1.2] object-center"
 							/>
-						</div>
+						</motion.div>
 					</div>
+
+					{/* technologies */}
+					<Technologies />
+					{/* technologies */}
 				</div>
 				{/* content */}
 			</div>

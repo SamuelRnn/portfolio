@@ -1,12 +1,5 @@
 import Head from 'next/head'
-import {
-	Header,
-	Layout,
-	About,
-	Technologies,
-	Projects,
-	Contact,
-} from '@/components'
+import { Header, Layout, About, Projects, Contact, Footer } from '@/components'
 import { useEffect } from 'react'
 
 export default function Home() {
@@ -27,9 +20,9 @@ export default function Home() {
 			<Header />
 			<main className="bg-main-dark">
 				<About />
-				<Technologies />
 				<Projects />
 				<Contact />
+				<Footer />
 			</main>
 		</>
 	)

@@ -1,7 +1,7 @@
 import { AiFillHome } from 'react-icons/ai'
 import { HiCode } from 'react-icons/hi'
 import { HiSquares2X2, HiUser } from 'react-icons/hi2'
-import { BsSendFill } from 'react-icons/bs'
+import { IoMdMail } from 'react-icons/io'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -43,16 +43,12 @@ export default function Nav() {
 			icon: <HiUser className="text-2xl m-2" />,
 		},
 		{
-			title: 'stack',
-			icon: <HiCode className="text-2xl m-2" />,
-		},
-		{
 			title: 'projects',
 			icon: <HiSquares2X2 className="text-2xl m-2" />,
 		},
 		{
 			title: 'contact',
-			icon: <BsSendFill className="text-xl m-2" />,
+			icon: <IoMdMail className="text-2xl m-2" />,
 		},
 	]
 	if (isDesktop)
@@ -65,7 +61,7 @@ export default function Nav() {
 					stiffness: 60,
 					bounce: false,
 				}}
-				className="fixed top-5 z-50 w-full flex justify-center font-accent"
+				className="fixed top-5 z-50 w-full flex justify-center"
 			>
 				{/* nav ui */}
 				<div
@@ -84,7 +80,7 @@ export default function Nav() {
 									// onClick={}
 									onTap={() => navigate(section.title)}
 									whileTap={{ scale: 0.85 }}
-									className="flex items-center justify-center font-accent hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
+									className="flex items-center justify-center hover:bg-zinc-500/40 rounded-lg transition-colors duration-500 ease-out"
 								>
 									{section.icon}
 								</motion.button>
@@ -98,7 +94,7 @@ export default function Nav() {
 											initial="out"
 											animate="hovered"
 											exit="out"
-											className="absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
+											className="select-none absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
 										>
 											{section.title}
 										</motion.p>

@@ -1,10 +1,10 @@
-@import url('../fonts/fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-	@apply bg-main-dark text-zinc-300;
+	@apply bg-main-dark text-zinc-300 font-main sm:text-lg;
 	scrollbar-width: none !important;
 	scrollbar-color: #999999 #ffffff;
 	scroll-behavior: smooth;
