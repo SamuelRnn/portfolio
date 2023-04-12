@@ -44,13 +44,10 @@ export default function Technologies() {
 				className="flex gap-6 flex-wrap justify-center bg-zinc-500/30 px-2 py-4 rounded-lg"
 			>
 				{stackImages.map((image, i) => (
-					<div
-						key={i}
-						className="hover:-translate-y-2 hover:scale-105 transition-transform ease-out duration-300"
-					>
+					<div key={i}>
 						<Image
 							src={image}
-							alt="tech"
+							alt="technology icon"
 							className="aspect-square m-4 w-14 drop-shadow-lg shadow-main-dark"
 						/>
 					</div>

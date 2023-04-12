@@ -1,5 +1,4 @@
 import { useScroll, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import Nav from './Nav'
 
 export default function Layout() {

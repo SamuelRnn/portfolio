@@ -1,5 +1,4 @@
 import { AiFillHome } from 'react-icons/ai'
-import { HiCode } from 'react-icons/hi'
 import { HiSquares2X2, HiUser } from 'react-icons/hi2'
 import { IoMdMail } from 'react-icons/io'
 import { useEffect, useState } from 'react'
@@ -53,23 +52,14 @@ export default function Nav() {
 	]
 	if (isDesktop)
 		return (
-			<motion.div
-				initial={{ y: -70 }}
-				animate={{ y: 0 }}
-				transition={{
-					type: 'spring',
-					stiffness: 60,
-					bounce: false,
-				}}
-				className="fixed top-5 z-50 w-full flex justify-center"
-			>
+			<div className="fixed top-5 z-50 w-full flex justify-center">
 				{/* nav ui */}
 				<div
 					className={`w-full max-w-md mx-auto h-16 rounded-2xl flex ${
 						navState === 'out'
 							? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
 							: ' border-transparent  -translate-y-3'
-					} transition-all duration-300 ease-out`}
+					} transition-all duration-[.32s] ease-out`}
 				>
 					<nav className="w-full flex justify-evenly items-center text-zinc-300">
 						{sections.map(section => (
@@ -94,7 +84,7 @@ export default function Nav() {
 											initial="out"
 											animate="hovered"
 											exit="out"
-											className="select-none absolute -bottom-9 bg-zinc-800 rounded-full px-3 py-1"
+											className="text-base select-none absolute -bottom-11 bg-zinc-800 rounded-full px-3 py-1"
 										>
 											{section.title}
 										</motion.p>
@@ -105,7 +95,7 @@ export default function Nav() {
 					</nav>
 				</div>
 				{/* nav ui */}
-			</motion.div>
+			</div>
 		)
 	return <></>
 }

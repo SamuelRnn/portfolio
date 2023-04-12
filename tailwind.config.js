@@ -4,7 +4,6 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				// titles: 'Titles',
 				main: '"Work Sans", sans-serif;',
 			},
 			fontWeight: {
@@ -14,7 +13,7 @@ module.exports = {
 				accent: 'rgb(171 64 96)',
 				main: {
 					dark: 'rgb(17 17 17)',
-					mid: 'rgb(26 24 29) ',
+					mid: 'rgb(26 24 29)',
 				},
 			},
 			width: {

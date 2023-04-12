@@ -21,28 +21,28 @@ const social_tags = [
 export default function Footer() {
 	return (
 		<div
-			className="bg-fixed bg-cover bg-center text-zinc-200/70 text-center h-40"
-			style={{
-				backgroundImage: 'url(/bg2.jpg)',
-			}}
+			style={
+				{
+					// backgroundImage: 'url(/radiant-gradient.svg)',
+				}
+			}
+			className="h-48 w-full flex flex-col justify-center items-center bg-main-dark bg-fixed bg-cover"
 		>
-			<div className="w-full flex flex-col justify-center items-center bg-main-dark/80 h-full">
-				<div className="w-40 mx-auto">
-					<div className="flex justify-between">
-						{social_tags.map(({ href, icon, name }) => (
-							<a
-								key={name}
-								target="_blank"
-								href={href}
-								className="rounded-lg w-8 h-8 flex justify-center items-center"
-							>
-								{icon}
-							</a>
-						))}
-					</div>
+			<div className="w-40 mx-auto">
+				<div className="flex justify-between">
+					{social_tags.map(({ href, icon, name }) => (
+						<a
+							key={name}
+							target="_blank"
+							href={href}
+							className="rounded-lg w-8 h-8 flex justify-center items-center"
+						>
+							{icon}
+						</a>
+					))}
 				</div>
-				<p className="mt-2 text-base">SamuelRnn | 2023</p>
 			</div>
+			<p className="mt-2 text-base">SamuelRnn | 2023</p>
 		</div>
 	)
 }
