@@ -20,14 +20,7 @@ const social_tags = [
 
 export default function Footer() {
 	return (
-		<div
-			style={
-				{
-					// backgroundImage: 'url(/radiant-gradient.svg)',
-				}
-			}
-			className="h-48 w-full flex flex-col justify-center items-center bg-main-dark bg-fixed bg-cover"
-		>
+		<div className="h-48 w-full flex flex-col justify-center items-center bg-main-dark bg-fixed bg-cover">
 			<div className="w-40 mx-auto">
 				<div className="flex justify-between">
 					{social_tags.map(({ href, icon, name }) => (
