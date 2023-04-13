@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import profile from '../../public/profile.jpeg'
 import code from '../../public/code.png'
-import useSubtitle from '@/hooks/useSubtitle'
 import { useTransform, motion, useScroll, easeOut } from 'framer-motion'
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
+import { useTypewriter } from 'react-simple-typewriter'
 
 const social_tags = [
 	{
@@ -24,9 +24,11 @@ const social_tags = [
 ]
 
 export default function Header() {
-	const { output } = useSubtitle()
 	const { scrollY } = useScroll()
 	const y = useTransform(scrollY, [0, 800], ['0%', '-14%'])
+	const [output] = useTypewriter({
+		words: ['sam perez', 'full stack developer'],
+	})
 
 	return (
 		<header className="relative" id="start">
@@ -60,7 +62,7 @@ export default function Header() {
 
 						<h2 className="thin-text pl-1 md:text-lg font-sans">
 							{output}
-							<span className="animate-ping">|</span>
+							<span className="animate-ping font-sans font-extrabold">|</span>
 						</h2>
 
 						{/* Social content */}

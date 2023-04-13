@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Header, Layout, About, Projects, Contact, Footer } from '@/components'
 import { useEffect } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 export default function Home() {
 	useEffect(() => {
@@ -16,6 +17,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				{/* <link rel="icon" href="/sword-dog.png" /> */}
 			</Head>
+			<Toaster position="bottom-center" />
 			<Layout />
 			<Header />
 			<main className="bg-main-dark">
