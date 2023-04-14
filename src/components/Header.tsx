@@ -27,7 +27,7 @@ export default function Header() {
 	const { scrollY } = useScroll()
 	const y = useTransform(scrollY, [0, 800], ['0%', '-14%'])
 	const [output] = useTypewriter({
-		words: ['sam perez', 'full stack developer'],
+		words: ['samuel perez', 'full stack developer'],
 	})
 
 	return (
