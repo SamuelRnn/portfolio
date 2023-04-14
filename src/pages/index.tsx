@@ -21,6 +21,7 @@ export default function Home() {
 					property="og:title"
 					content="Samuel Perez | Full-stack Developer"
 				/>
+				<meta property="og:url" content="https://samuelrnn.vercel.app/" />
 				<meta property="og:description" content="Samuel Perez portfolio" />
 				<meta property="og:image" content="dev.png" />
 				<link rel="icon" href="/icon.svg" />
