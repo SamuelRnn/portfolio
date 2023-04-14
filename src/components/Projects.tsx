@@ -50,14 +50,13 @@ export default function Projects() {
 						/>
 						<div className="mt-4">
 							<p className="text-center text-emerald-500">{project.title}</p>
-							<p className="text-sm mt-2 text-justify text-zinc-400 h-32">
+							<p className="text-base mt-2 text-justify text-zinc-400 h-40">
 								{project.description}
 							</p>
 							<div className="flex justify-between">
 								<p></p>
 								<p></p>
 							</div>
-							<div className="border-b border-zinc-500 mx-4"></div>
 						</div>
 					</div>
 				))}

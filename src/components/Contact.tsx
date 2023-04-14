@@ -55,7 +55,7 @@ export default function Contact() {
 		>
 			<div className="w-box mx-auto py-12 lg:py-32 grid lg:grid-cols-2 gap-10">
 				<div className="lg:mt-12">
-					<h2 className="font-titles uppercase text-3xl pb-8">
+					<h2 className="font-titles uppercase text-3xl pb-8 max-lg:text-center">
 						Let&apos;s work together
 					</h2>
 					<p>

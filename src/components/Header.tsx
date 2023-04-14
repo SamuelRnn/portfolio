@@ -4,6 +4,7 @@ import code from '../../public/code.png'
 import { useTransform, motion, useScroll, easeOut } from 'framer-motion'
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
 import { useTypewriter } from 'react-simple-typewriter'
+import { useEffect } from 'react'
 
 const social_tags = [
 	{
@@ -25,7 +26,7 @@ const social_tags = [
 
 export default function Header() {
 	const { scrollY } = useScroll()
-	const y = useTransform(scrollY, [0, 800], ['0%', '-14%'])
+	let y = useTransform(scrollY, [0, 800], ['0%', '-14%'])
 	const [output] = useTypewriter({
 		words: ['samuel perez', 'full stack developer'],
 	})
