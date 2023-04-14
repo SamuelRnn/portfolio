@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Header, Layout, About, Projects, Contact, Footer } from '@/components'
 import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
+/* svg backgrounds by SVGBackgrounds.com */
 
 export default function Home() {
 	useEffect(() => {

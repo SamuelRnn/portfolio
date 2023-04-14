@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profile from '../../public/profile.jpeg'
+import profile from '../../public/profile.jpg'
 import code from '../../public/code.png'
 import { useTransform, motion, useScroll, easeOut } from 'framer-motion'
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
@@ -47,8 +47,8 @@ export default function Header() {
 			<div className="flex flex-col justify-center w-full h-screen bg-main-dark/50">
 				<div className="mx-auto flex flex-col items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
 					<Image
-						width={224}
-						height={224}
+						width={200}
+						height={200}
 						src={profile}
 						alt="samuel picture"
 						placeholder="blur"
@@ -60,7 +60,7 @@ export default function Header() {
 							samuel rnn
 						</h1>
 
-						<h2 className="thin-text pl-1 md:text-lg font-sans">
+						<h2 className="thin-text pl-1 font-sans">
 							{output}
 							<span className="animate-ping font-sans font-extrabold">|</span>
 						</h2>

@@ -1,28 +1,41 @@
 import { AiFillHome } from 'react-icons/ai'
 import { HiSquares2X2, HiUser } from 'react-icons/hi2'
 import { IoMdMail } from 'react-icons/io'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Nav() {
 	const [isDesktop, setIsDesktop] = useState(false)
 	const [navState, setNavState] = useState('top')
 	const [hovered, setHovered] = useState<null | string>(null)
+	const [scrollDirection, setScrollDirection] = useState('up')
+	const previousScrollValue = useRef(0)
 
 	useEffect(() => {
 		const toggleNav = () => {
 			if (window.innerWidth >= 1024) setIsDesktop(true)
 			else setIsDesktop(false)
 		}
-
-		toggleNav()
-		window.addEventListener('resize', toggleNav)
-
 		const scroller = () => {
 			if (scrollY > 0) setNavState('out')
 			else setNavState('top')
 		}
+
+		const detectScrollDirection = () => {
+			if (scrollY > previousScrollValue.current) {
+				setScrollDirection('down')
+			}
+			if (scrollY < previousScrollValue.current) {
+				setScrollDirection('up')
+			}
+			previousScrollValue.current = scrollY
+		}
+
+		toggleNav()
+
+		window.addEventListener('resize', toggleNav)
 		window.addEventListener('scroll', scroller)
+		window.addEventListener('scroll', detectScrollDirection)
 	}, [])
 
 	const navigate = (id: string) => {
@@ -52,14 +65,18 @@ export default function Nav() {
 	]
 	if (isDesktop)
 		return (
-			<div className="fixed top-5 z-50 w-full flex justify-center">
+			<motion.div
+				animate={{ y: scrollDirection === 'down' ? -150 : 0 }}
+				transition={{ ease: 'easeOut', duration: 0.3 }}
+				className="fixed top-5 z-50 w-full flex justify-center"
+			>
 				{/* nav ui */}
 				<div
 					className={`w-full max-w-md mx-auto h-16 rounded-2xl flex ${
 						navState === 'out'
 							? 'border border-white/20 shadow-lg bo shadow-main-dark/50 backdrop-blur-sm bg-main-dark/80'
-							: ' border-transparent  -translate-y-3'
-					} transition-all duration-[.32s] ease-out`}
+							: ' border-transparent'
+					} transition-all duration-500 ease-out`}
 				>
 					<nav className="w-full flex justify-evenly items-center text-zinc-300">
 						{sections.map(section => (
@@ -95,7 +112,7 @@ export default function Nav() {
 					</nav>
 				</div>
 				{/* nav ui */}
-			</div>
+			</motion.div>
 		)
 	return <></>
 }

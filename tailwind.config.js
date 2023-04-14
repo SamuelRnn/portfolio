@@ -4,11 +4,10 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				main: '"Work Sans", sans-serif;',
+				main: '"Didact Gothic", sans-serif',
+				titles: '"Sen", sans-serif',
 			},
-			fontWeight: {
-				titles: '900',
-			},
+			fontWeight: {},
 			colors: {
 				accent: 'rgb(171 64 96)',
 				main: {
