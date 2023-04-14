@@ -23,7 +23,7 @@ export default function Home() {
 				/>
 				<meta property="og:url" content="https://samuelrnn.vercel.app/" />
 				<meta property="og:description" content="Samuel Perez portfolio" />
-				<meta property="og:image" content="/dev.png" />
+				<meta property="og:image" content="https://i.imgur.com/KIrNTSN.png" />
 				<link rel="icon" href="/icon.svg" />
 			</Head>
 			<Toaster position="bottom-center" />
