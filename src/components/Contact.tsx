@@ -55,14 +55,21 @@ export default function Contact() {
 		>
 			<div className="w-box mx-auto py-12 lg:py-32 grid lg:grid-cols-2 gap-10">
 				<div className="lg:mt-12">
-					<h2 className="font-titles uppercase text-2xl lg:text-4xl pb-8">
+					<h2 className="font-titles uppercase text-3xl pb-8">
 						Let&apos;s work together
 					</h2>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis id
-						harum, at autem animi alias tempore dicta nobis dolores tempora
-						laboriosam vitae. Architecto aliquid inventore fuga accusantium
-						eligendi praesentium eius.
+						Did my profile catch your interest? Are you looking for a talented
+						dev to bring your web solution to life? Tell me more about it!
+					</p>
+					<p className="mt-6">
+						Send me a message using this form. Be sure to provide as much detail
+						as possible. And don&apos;t forget to include any links you want me
+						to check out - just make sure they start with{' '}
+						<span className="text-emerald-500 font-bold">
+							&quot;https://&quot;
+						</span>
+						, for script neccesities 🤝.
 					</p>
 				</div>
 				<div className="place-self-center w-full max-w-lg h-[500px] bg-main-mid rounded-2xl shadow-xl px-6 py-8">

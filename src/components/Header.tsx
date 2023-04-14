@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profile from '../../public/profile.jpg'
+import dev from '../../public/dev.png'
 import code from '../../public/code.png'
 import { useTransform, motion, useScroll, easeOut } from 'framer-motion'
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
@@ -49,10 +49,10 @@ export default function Header() {
 					<Image
 						width={200}
 						height={200}
-						src={profile}
+						src={dev}
 						alt="samuel picture"
 						placeholder="blur"
-						className="rounded-full shadow-lg shadow-black/40 max-sm:w-48"
+						className="rounded-full shadow-lg shadow-black/40 max-sm:w-48 brightness-[1.02]"
 					/>
 
 					<div className="text-center">
