@@ -45,14 +45,14 @@ export default function Header() {
 			</motion.div>
 
 			<div className="flex flex-col justify-center w-full h-screen bg-main-dark/50">
-				<div className="mx-auto flex flex-col items-center justify-center gap-4 md:gap-x-8 -mt-16 min-[400px]:px-10">
+				<div className="mx-auto flex flex-col items-center justify-center gap-6 -mt-16 min-[400px]:px-10">
 					<Image
-						width={200}
-						height={200}
+						width={180}
+						height={180}
 						src={dev}
 						alt="samuel picture"
 						placeholder="blur"
-						className="rounded-full shadow-lg shadow-black/40 max-sm:w-48 brightness-[1.02]"
+						className="rounded-full shadow-lg shadow-black/40 brightness-[1.02]"
 					/>
 
 					<div className="text-center">
@@ -60,7 +60,7 @@ export default function Header() {
 							samuel rnn
 						</h1>
 
-						<h2 className="thin-text pl-1 font-sans">
+						<h2 className="thin-text pl-1 font-sans text-sm md:text-base">
 							{output}
 							<span className="animate-ping font-sans font-extrabold">|</span>
 						</h2>

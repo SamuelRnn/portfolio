@@ -131,7 +131,7 @@ export default function Contact() {
 										initial="notVisible"
 										animate="visible"
 									>
-										Let&apos;s talk!
+										Send
 									</motion.span>
 								)}
 							</AnimatePresence>
