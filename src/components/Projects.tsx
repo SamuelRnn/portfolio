@@ -67,9 +67,9 @@ export default function Projects() {
 									title="live deploy"
 									target="_blank"
 									href={project.deploy ?? undefined}
-									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 ${
+									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 transition-colors ease-out ${
 										project.deploy ||
-										'select-none pointer-events-none opacity-60'
+										'select-none pointer-events-none opacity-30'
 									}`}
 								>
 									<BiLinkExternal className="m-2" />
@@ -78,7 +78,7 @@ export default function Projects() {
 									title="github repo"
 									target="_blank"
 									href={project.repo ?? undefined}
-									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 ${
+									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 transition-colors ease-out ${
 										project.repo || 'select-none pointer-events-none opacity-30'
 									}`}
 								>
