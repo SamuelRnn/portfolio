@@ -1,35 +1,47 @@
 import Image from 'next/image'
+import { BiLinkExternal } from 'react-icons/bi'
+import { FiGithub } from 'react-icons/fi'
 
 const projectsData = [
 	{
 		image: 'https://ucarecdn.com/e35c7d12-3b26-49fd-8d45-4bb42210e2e1/',
 		title: 'senvii',
 		description:
-			'Professional demo project that aims to showcase the virtues of a intelligent roadway diagnosis. Includes a progressive form, authentication and profile management, protected routes and responsive design',
+			'Demo project that aims to showcase the virtues of a intelligent roadway diagnosis.',
+		deploy: 'https://www.senvii.com/',
+		repo: null,
 	},
 	{
 		image: 'https://ucarecdn.com/69d43d54-d2e4-4aa4-94b8-6fbee635b459/',
 		title: 'liteflix',
 		description:
-			'This project replicates a Netflix-like UI for a technical challenge. It has smooth animations and data upload with local storage. As an extra functionality, the app detects if your trying to upload a file that is not an image.',
+			'This project replicates a Netflix-like UI for a technical challenge.',
+		deploy: 'https://liteflix-samuelrnn.vercel.app/',
+		repo: 'https://github.com/SamuelRnn/liteflix-challenge',
 	},
 	{
 		image: 'https://ucarecdn.com/e4e5495c-ac63-4c7f-aaf0-bbc0982701c8/',
 		title: 'lazy buy',
 		description:
-			'Marketplace platform for small and medium businesses! Designed to be practical and user-friendly, with stripe payments, a virtual office and may more features. Developed as Final Project for Henry Bootcamp.',
+			'Marketplace platform. Developed as Final project in Henry Bootcamp',
+		deploy: 'https://lazy-buy.vercel.app/',
+		repo: 'https://github.com/SamuelRnn/lazy-buy',
 	},
 	{
 		image: 'https://ucarecdn.com/f3094714-2ce5-425e-9170-53311d956dc5/',
 		title: 'gamexplore',
 		description:
-			'Videogames showcase SPA, using a public api. Main features: Controlled creation form, sorting, filtering, pagination, responsive design and persistance of data using local storage. Developer as Individual Project for Henry Bootcamp.',
+			'Videogames showcase. Developed as Individual project in Henry Bootcamp.',
+		deploy: 'https://pi-samuel-rnn-videogames.vercel.app/',
+		repo: 'https://github.com/SamuelRnn/PI-SamuelRnn---Videogames',
 	},
 	{
 		image: 'https://ucarecdn.com/803732bd-ffa1-4608-b918-bf280c6b6877/',
 		title: 'spin off',
 		description:
-			'User-friendly platform with a vast database of movies and TV shows.',
+			'Front-end project using a vast database of movies and TV shows.',
+		deploy: 'https://spin-off.netlify.app/',
+		repo: 'https://github.com/SamuelRnn/MoviesApp',
 	},
 ]
 
@@ -38,26 +50,45 @@ export default function Projects() {
 		<section className="py-28 mx-auto w-box" id="projects">
 			<h2 className="text-3xl uppercase font-titles text-center">Projects</h2>
 
-			<div className="mt-12 w-full flex flex-wrap justify-center gap-x-8 gap-y-16">
+			<div className="mt-12 w-full flex flex-wrap justify-center gap-x-8 gap-y-12">
 				{projectsData.map(project => (
-					<div key={project.title} className="w-full min-[600px]:max-w-xs">
+					<div key={project.title} className=" max-w-xs shadow-md rounded-lg">
 						<Image
 							src={project.image}
+							className="object-top object-cover block rounded-lg aspect-video"
 							width={600}
 							height={400}
-							className="aspect-[3/2] object-cover object-center rounded-lg block"
 							alt={project.title}
 						/>
-						<div className="mt-4">
-							<p className="text-center text-emerald-500">{project.title}</p>
-							<p className="text-base mt-2 text-justify text-zinc-400 h-40">
-								{project.description}
-							</p>
-							<div className="flex justify-between">
-								<p></p>
-								<p></p>
+						<div className="px-2 mt-4 flex items-center justify-between">
+							<p>{project.title}</p>
+							<div className="flex gap-x-2">
+								<a
+									title="live deploy"
+									target="_blank"
+									href={project.deploy ?? undefined}
+									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 ${
+										project.deploy ||
+										'select-none pointer-events-none opacity-60'
+									}`}
+								>
+									<BiLinkExternal className="m-2" />
+								</a>
+								<a
+									title="github repo"
+									target="_blank"
+									href={project.repo ?? undefined}
+									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 ${
+										project.repo || 'select-none pointer-events-none opacity-30'
+									}`}
+								>
+									<FiGithub className="m-2" />
+								</a>
 							</div>
 						</div>
+						<p className="px-2 mt-4 text-base text-zinc-400 h-24">
+							{project.description}
+						</p>
 					</div>
 				))}
 			</div>

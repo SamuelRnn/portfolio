@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import dev from '../../public/dev.png'
 import code from '../../public/code.png'
-import { useTransform, motion, useScroll, easeOut } from 'framer-motion'
+import { useTransform, motion, useScroll } from 'framer-motion'
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs'
 import { useTypewriter } from 'react-simple-typewriter'
-import { useEffect } from 'react'
 
 const social_tags = [
 	{
