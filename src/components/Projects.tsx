@@ -23,7 +23,7 @@ const projectsData = [
 		image: 'https://ucarecdn.com/e4e5495c-ac63-4c7f-aaf0-bbc0982701c8/',
 		title: 'lazy buy',
 		description:
-			'Marketplace platform. Developed as Final project in Henry Bootcamp',
+			'Marketplace platform. Developed as Final project in Henry Bootcamp.',
 		deploy: 'https://lazy-buy.vercel.app/',
 		repo: 'https://github.com/SamuelRnn/lazy-buy',
 	},
