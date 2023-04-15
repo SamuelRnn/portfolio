@@ -50,9 +50,9 @@ export default function Projects() {
 		<section className="py-28 mx-auto w-box" id="projects">
 			<h2 className="text-3xl uppercase font-titles text-center">Projects</h2>
 
-			<div className="mt-12 w-full flex flex-wrap justify-center gap-x-8 gap-y-12">
+			<div className="mt-12 w-full flex flex-wrap justify-center gap-x-8 gap-y-8">
 				{projectsData.map(project => (
-					<div key={project.title} className=" max-w-xs shadow-md rounded-lg">
+					<div key={project.title} className="max-w-xs">
 						<Image
 							src={project.image}
 							className="object-top object-cover block rounded-lg aspect-video"
@@ -61,7 +61,9 @@ export default function Projects() {
 							alt={project.title}
 						/>
 						<div className="px-2 mt-4 flex items-center justify-between">
-							<p>{project.title}</p>
+							<p className="font-sans uppercase tracking-[.2rem] text-zinc-400 text-sm">
+								{project.title}
+							</p>
 							<div className="flex gap-x-2">
 								<a
 									title="live deploy"
@@ -86,7 +88,7 @@ export default function Projects() {
 								</a>
 							</div>
 						</div>
-						<p className="px-2 mt-4 text-base text-zinc-400 h-24">
+						<p className="px-2 mt-2 text-base text-zinc-400 h-24">
 							{project.description}
 						</p>
 					</div>
