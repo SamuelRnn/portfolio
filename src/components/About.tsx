@@ -2,7 +2,7 @@ export default function About() {
 	return (
 		<section
 			id="about"
-			className="bg-no-repeat bg-cover bg-fixed bg-center"
+			className="bg-no-repeat bg-cover bg-fixed bg-center bg-main-mid"
 			style={{ backgroundImage: 'url(/diagonals.svg)' }}
 		>
 			<div className="py-28 mx-auto w-box">

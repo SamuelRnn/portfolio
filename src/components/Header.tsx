@@ -31,7 +31,7 @@ export default function Header() {
 	})
 
 	return (
-		<header className="relative" id="start">
+		<header className="relative overflow-hidden" id="start">
 			<motion.div
 				className="fixed -z-10 top-0 w-full origin-center left-0"
 				style={{ y }}

@@ -50,7 +50,7 @@ export default function Contact() {
 	return (
 		<section
 			id="contact"
-			className="bg-no-repeat bg-cover bg-fixed bg-center"
+			className="bg-no-repeat bg-cover bg-fixed bg-center bg-main-dark"
 			style={{ backgroundImage: 'url(/peaks.svg)' }}
 		>
 			<div className="w-box mx-auto py-12 lg:py-32 grid lg:grid-cols-2 gap-10">
