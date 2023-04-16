@@ -26,6 +26,7 @@ export default function Footer() {
 					{social_tags.map(({ href, icon, name }) => (
 						<a
 							key={name}
+							title={name}
 							target="_blank"
 							href={href}
 							className="rounded-lg w-8 h-8 flex justify-center items-center"
