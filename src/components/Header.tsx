@@ -38,9 +38,10 @@ export default function Header() {
 			>
 				<Image
 					src={code}
-					alt="hero banner"
-					priority={true}
-					className="object-cover object-left h-screen blur-[2px] w-full"
+					alt="code hero banner"
+					priority
+					quality={60}
+					className="object-cover object-left h-screen blur-[3px] w-full"
 				/>
 			</motion.div>
 
@@ -50,8 +51,9 @@ export default function Header() {
 						width={180}
 						height={180}
 						src={dev}
-						alt="samuel picture"
-						placeholder="blur"
+						priority
+						alt="dev photo"
+						// placeholder="blur"
 						className="rounded-full shadow-lg shadow-black/40 brightness-[1.02]"
 					/>
 

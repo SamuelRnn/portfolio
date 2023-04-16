@@ -50,14 +50,14 @@ export default function Projects() {
 		<section className="py-28 mx-auto w-box" id="projects">
 			<h2 className="text-3xl uppercase font-titles text-center">Projects</h2>
 
-			<div className="mt-12 w-full flex flex-wrap justify-center gap-x-8 gap-y-8">
+			<div className="mt-14 w-full flex flex-wrap justify-center gap-8">
 				{projectsData.map(project => (
 					<div key={project.title} className="max-w-xs">
 						<Image
 							src={project.image}
 							className="object-top object-cover block rounded-lg aspect-video"
-							width={600}
-							height={400}
+							width={320}
+							height={180}
 							alt={project.title}
 						/>
 						<div className="px-2 mt-4 flex items-center justify-between">
@@ -68,7 +68,7 @@ export default function Projects() {
 								<a
 									title="live deploy"
 									target="_blank"
-									href={project.deploy ?? undefined}
+									href={project.deploy ?? '/'}
 									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 transition-colors ease-out ${
 										project.deploy ||
 										'select-none pointer-events-none opacity-30'
@@ -79,7 +79,7 @@ export default function Projects() {
 								<a
 									title="github repo"
 									target="_blank"
-									href={project.repo ?? undefined}
+									href={project.repo ?? '/'}
 									className={`hover:bg-zinc-400/20 rounded-md outline outline-1 outline-zinc-600 transition-colors ease-out ${
 										project.repo || 'select-none pointer-events-none opacity-30'
 									}`}
