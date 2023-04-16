@@ -54,13 +54,16 @@ export default function Projects() {
 				<div className="mt-14 w-full flex flex-wrap justify-center gap-8">
 					{projectsData.map(project => (
 						<div key={project.title} className="max-w-xs">
-							<Image
-								src={project.image}
-								className="object-top object-cover block rounded-lg aspect-video"
-								width={320}
-								height={180}
-								alt={project.title}
-							/>
+							<div className="relative aspect-video">
+								<div className="absolute w-full h-full bg-main-mid rounded-lg" />
+								<Image
+									src={project.image}
+									className="absolute object-top object-cover block rounded-lg aspect-video"
+									width={320}
+									height={180}
+									alt={project.title}
+								/>
+							</div>
 							<div className="px-2 mt-4 flex items-center justify-between">
 								<p className="font-sans uppercase tracking-[.2rem] text-zinc-400 text-sm">
 									{project.title}
