@@ -33,7 +33,7 @@ export default function Header() {
 	return (
 		<header className="relative" id="start">
 			<motion.div
-				className="fixed -z-10 top-0 w-full full origin-center left-0 overflow-hidden"
+				className="fixed -z-10 top-0 w-full origin-center left-0"
 				style={{ y }}
 			>
 				<Image
@@ -53,7 +53,6 @@ export default function Header() {
 						src={dev}
 						priority
 						alt="dev photo"
-						// placeholder="blur"
 						className="rounded-full shadow-lg shadow-black/40 brightness-[1.02]"
 					/>
 
@@ -64,7 +63,7 @@ export default function Header() {
 
 						<h2 className="thin-text pl-1 font-sans text-sm md:text-base">
 							{output}
-							<span className="animate-ping font-sans font-extrabold">|</span>
+							<span className="animate-ping font-main">|</span>
 						</h2>
 
 						{/* Social content */}

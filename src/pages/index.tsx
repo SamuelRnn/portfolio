@@ -1,15 +1,9 @@
 import Head from 'next/head'
 import { Header, Layout, About, Projects, Contact, Footer } from '@/components'
-import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 /* svg backgrounds by SVGBackgrounds.com */
 
 export default function Home() {
-	useEffect(() => {
-		window.scrollTo({
-			top: 0,
-		})
-	}, [])
 	return (
 		<>
 			<Head>
@@ -19,14 +13,13 @@ export default function Home() {
 				<link rel="icon" href="/icon.svg" />
 			</Head>
 			<Toaster position="bottom-center" />
+
 			<Layout />
 			<Header />
-			<main className="bg-main-dark">
-				<About />
-				<Projects />
-				<Contact />
-				<Footer />
-			</main>
+			<About />
+			<Projects />
+			<Contact />
+			<Footer />
 		</>
 	)
 }

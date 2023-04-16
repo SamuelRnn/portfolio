@@ -1,11 +1,15 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
 			fontFamily: {
-				main: '"Didact Gothic", sans-serif',
-				titles: '"Sen", sans-serif',
+				// main: '"Didact Gothic", sans-serif',
+				// titles: '"Sen", sans-serif',
+				main: ['var(--font-didact-gothic)', ...fontFamily.sans],
+				titles: ['var(--font-sen)', ...fontFamily.sans],
 			},
 			fontWeight: {},
 			colors: {

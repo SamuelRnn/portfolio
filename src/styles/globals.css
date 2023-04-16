@@ -1,13 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Sen:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Sen:wght@700&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-	@apply bg-main-dark text-zinc-300 font-main text-lg;
-	scrollbar-width: none !important;
-	scrollbar-color: #999999 #ffffff;
+	@apply bg-main-dark text-zinc-300 text-lg;
 	scroll-behavior: smooth;
 }
 .grid-about {
