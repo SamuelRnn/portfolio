@@ -13,7 +13,7 @@ export default function About() {
 					<span className="text-emerald-500">Full Stack Developer</span>. I aim
 					to deliver atractive, secure and scalable results for every project I
 					work on. Whether it&apos;s developing robust back-end solutions or
-					crafting engaging user interfaces, I&apos;m always up for a challange!
+					crafting engaging user interfaces, I&apos;m always up for a challenge!
 				</p>
 			</div>
 		</section>
